@@ -8,7 +8,7 @@ pipeline {
     agent {
         docker {
             // Pin to an Ubuntu LTS tag; adjust as needed (e.g. ubuntu:24.04).
-            image 'ubuntu:22.04'
+            image 'ubuntu:24.04'
             // Build deps and install need root; use a dedicated image in production if you prefer non-root builds.
             args '-u root --network=bridge'
             // Optional: reuse workspace
@@ -19,8 +19,6 @@ pipeline {
     options {
         timestamps()
         timeout(time: 2, unit: 'HOURS')
-        // Keep logs from long configure/make output manageable
-        ansiColor('xterm')
     }
 
     parameters {
