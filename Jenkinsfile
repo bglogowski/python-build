@@ -6,7 +6,7 @@
 
 pipeline {
     agent {
-        docker {
+        dockerContainer {
             // Pin to an Ubuntu LTS tag; adjust as needed (e.g. ubuntu:24.04).
             image 'ubuntu:24.04'
             // Build deps and install need root; use a dedicated image in production if you prefer non-root builds.
